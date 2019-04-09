@@ -35,13 +35,15 @@ class QuizViewController: UIViewController {
         
         //------------------------ここから上にクイズを書く------------------------//
 
-        choiceQuiz()
+//        choiceQuiz()
+        quizArray = tmpArray.shuffled()
     }
     
     func choiceQuiz() {
         quizTextView.text = quizArray[0][0] as? String
         
         //選択肢のボタンにそれぞれ選択肢のテキストをセット
+        //[0]の選択肢[1] つまり、1問目の選択肢１番
         choiceButtons1.setTitle(quizArray[0][1] as? String, for: .normal)
         choiceButtons2.setTitle(quizArray[0][2] as? String, for: .normal)
         choiceButtons3.setTitle(quizArray[0][3] as? String, for: .normal)
