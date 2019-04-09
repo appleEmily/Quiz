@@ -67,33 +67,59 @@
                         <outlet property="choiceButtons1" destination="c9o-Y0-UMa" id="d2g-u0-Cn9"/>
                         <outlet property="choiceButtons2" destination="3py-Im-W7s" id="fkW-Gg-8yu"/>
                         <outlet property="choiceButtons3" destination="awV-Ln-XsX" id="mFX-lV-C8v"/>
-                        <outlet property="quizTextView" destination="yUB-E9-cy7" id="FCq-03-Os6"/>
+                        <outlet property="quizTextView" destination="yUB-E9-cy7" id="dfk-MF-A6X"/>
+                        <segue destination="v5h-tu-M0p" kind="presentation" id="uai-j2-1zv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ja-pD-Dgo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="520.79999999999995" y="95.802098950524751"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="MWC-FP-lCu">
             <objects>
-                <viewController id="v5h-tu-M0p" sceneMemberID="viewController">
+                <viewController id="v5h-tu-M0p" customClass="ResultViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AuQ-Eq-wr5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chanelF.png" translatesAutoresizingMaskIntoConstraints="NO" id="iQ5-mg-2G2">
-                                <rect key="frame" x="0.0" y="38" width="375" height="201"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chanelE.png" translatesAutoresizingMaskIntoConstraints="NO" id="bDf-bC-fS7">
                                 <rect key="frame" x="-23" y="20" width="421" height="701"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQo-HD-r4r">
+                                <rect key="frame" x="83" y="442" width="208" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.81568627449999997" green="0.74901960779999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="29"/>
+                                <state key="normal" title="Back to the title"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="wZo-3L-Ya1"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chanelF.png" translatesAutoresizingMaskIntoConstraints="NO" id="iQ5-mg-2G2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="201"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvm-FU-4rI">
+                                <rect key="frame" x="102" y="174" width="170" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tAy-qk-fcu"/>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="Mvm-FU-4rI" id="nkL-Z7-LuF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rE-3F-4FW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,6 +148,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="JEl-s1-pFm" kind="show" id="4zP-Bc-OjR"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chanelC.png" translatesAutoresizingMaskIntoConstraints="NO" id="iCN-d3-22U">
                                 <rect key="frame" x="0.0" y="167" width="375" height="190"/>
